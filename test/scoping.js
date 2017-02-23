@@ -9,10 +9,11 @@ describe('scoping', function () {
 
     function Module () {
       this.foo = 'bar';
+      thisRef = this;
     }
 
     Module.prototype.method = function() {
-      return this.foo;
+      return thisRef.foo;
     };
 
     Module.prototype.req = function() {
